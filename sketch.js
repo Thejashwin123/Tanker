@@ -130,7 +130,7 @@ if(gameState === "fight"){
 
 
   // make 1 more tank if score is above 100
-  if(score>=11){
+  if(score>=100){
 
 player2.visible=true
 
@@ -171,7 +171,7 @@ if(keyWentDown("space")){
 
 
 //release bullets and change the image of shooter to shooting position when space is pressed
-if(keyWentDown("space") && score>=11){
+if(keyWentDown("space") && score>=100){
   bullet2 = createSprite(100,player2.y-30,20,10)
   bullet2.velocityX = 20
   
@@ -275,7 +275,8 @@ textSize(20)
   fill("green")
 text("Bullets = " + bullets,displayWidth-510,displayHeight/3-220)
 text("Score = " + score,displayWidth-1300,displayHeight/3-220)
-text("Lives = " + life,displayWidth-200,displayHeight/2-280)
+fill("Red")
+text("Lives = " + life,displayWidth-900,displayHeight/3-220)
 
 //destroy zombie and player and display a message in gameState "lost"
 if(gameState == "lost"){
@@ -341,7 +342,7 @@ function enemy(){
     zombie = createSprite(random(500,1100),random(100,500),40,40)
 
     zombie.addImage(zombieImg)
-    zombie.scale = 0.5
+    zombie.scale = 0.4
     zombie.velocityX = -3
     zombie.debug= false
     zombie.setCollider("rectangle",0,0,800,800)
